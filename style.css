@@ -16,23 +16,30 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Main Layout Container ===== */
+/* ===== Main Centered Container - 1200px wide ===== */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    
+    /* Double vertical black border lines on sides of the 1200px section */
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+}
+
+/* ===== Internal Layout (Sidebar + Content) ===== */
 .layout-container {
     display: flex;
     min-height: 100vh;
 }
 
-/* ===== Left Sidebar Navigation ===== */
+/* ===== Left Sidebar Navigation - WITHIN the centered container ===== */
 .sidebar {
     width: 280px;
     background-color: #E7DCCD; /* Same cream color as content */
     padding: 2rem 1.5rem;
     overflow-y: auto;
     flex-shrink: 0;
-    
-    /* Double vertical black border lines - only on sides */
-    border-left: 4px solid #000;
-    border-right: 4px solid #000;
 }
 
 /* Section Labels (Me, Current Projects, Past Projects) */
@@ -320,9 +327,6 @@ h2 {
     .sidebar {
         width: 100%;
         max-height: 300px;
-        border-left: none;
-        border-right: none;
-        border-bottom: 4px solid #000;
     }
 
     .section-label {
