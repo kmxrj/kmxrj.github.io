@@ -16,50 +16,47 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Header Styles ===== */
-.main-header {
-    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
-    border-bottom: 3px solid #4a90d9;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 1rem 2rem;
+/* ===== Content Wrapper - Fixed Position with Borders ===== */
+.content-wrapper {
+    min-height: 100vh;
+    background-color: #f5f5dc; /* Cream color */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    
+    /* Double vertical black border lines - only on sides */
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+    
+    /* Fixed position so it stays in place while content scrolls */
     position: sticky;
     top: 0;
-    z-index: 100;
+    height: fit-content;
 }
 
-.logo {
+/* ===== Page Title "kmxrj" ===== */
+.page-title {
     text-align: center;
-    margin-bottom: 1rem;
-}
-
-.glow-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5));
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #000;
 }
 
-/* ===== Tab Navigation ===== */
-.tab-navigation {
+/* ===== Pill Navigation Buttons ===== */
+.navigation-buttons {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
-    border-radius: 20px;
-    padding: 0.5rem;
-    box-shadow: 
-        inset 0 -3px 6px rgba(0, 0, 0, 0.1),
-        0 2px 8px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.tab-button {
+.pill-button {
     background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    border-radius: 50px; /* Pill shape */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -70,7 +67,7 @@ body {
     color: #555;
 }
 
-.tab-button:hover {
+.pill-button:hover {
     background: linear-gradient(180deg, #f0f0f0 0%, #d9d9d9 100%);
     transform: translateY(-2px);
     box-shadow: 
@@ -78,7 +75,7 @@ body {
         0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.tab-button.active {
+.pill-button.active {
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
     color: white;
     box-shadow: 
@@ -86,16 +83,9 @@ body {
         0 2px 8px rgba(102, 126, 234, 0.4);
 }
 
-.tab-icon {
-    margin-right: 0.5rem;
-}
-
-/* ===== Main Container ===== */
-.container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    flex-grow: 1;
+/* ===== Main Content Area ===== */
+.main-content {
+    padding-top: 1rem;
 }
 
 /* ===== Tab Content ===== */
@@ -296,21 +286,6 @@ h1 {
         inset 0 -3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Footer ===== */
-.main-footer {
-    background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto;
-}
-
-.footer-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-top: 0.5rem;
-}
-
 /* ===== Contact Info ===== */
 .contact-info {
     background: linear-gradient(180deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
@@ -322,23 +297,24 @@ h1 {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-    .main-header {
+    .content-wrapper {
+        max-width: 90vw;
         padding: 1rem;
     }
 
-    .glow-text {
-        font-size: 1.5rem;
+    .page-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
 
-    .tab-navigation {
-        flex-wrap: wrap;
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
-    .tab-button {
-        flex: 1;
-        min-width: calc(33% - 0.75rem);
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+    .pill-button {
+        width: 100%;
+        text-align: center;
     }
 
     .content-card {
@@ -360,7 +336,7 @@ h1 {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f0f0f0;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
 }
 
