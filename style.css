@@ -16,73 +16,61 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Content Wrapper - Fixed Position with Borders ===== */
-.content-wrapper {
+/* ===== Main Layout Container ===== */
+.layout-container {
+    display: flex;
     min-height: 100vh;
-    background-color: #E7DCCD; /* Changed to requested color */
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
+}
+
+/* ===== Left Sidebar Navigation ===== */
+.sidebar {
+    width: 280px;
+    background-color: #E7DCCD; /* Same cream color as content */
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    flex-shrink: 0;
     
     /* Double vertical black border lines - only on sides */
     border-left: 4px solid #000;
     border-right: 4px solid #000;
-    
-    /* Fixed position so it stays in place while content scrolls */
-    position: sticky;
-    top: 0;
-    height: fit-content;
 }
 
-/* ===== Header Section Container (Title + Buttons) ===== */
-.header-section {
-    text-align: center;
-    border-bottom: 4px solid #000; /* This is the black line SEPARATING header from content */
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-}
-
-/* ===== Page Title "kmxrj" ===== */
-.page-title {
-    font-size: 2.5rem;
+/* Section Labels (Me, Current Projects, Past Projects) */
+.section-label {
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 2rem; /* Space from top edge of header section */
+    color: #667eea;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
 }
 
-/* ===== Pill Navigation Buttons - BELOW title, ABOVE black line ===== */
-.navigation-buttons {
+/* Sub Navigation Buttons */
+.sub-nav {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0; /* No extra space - sit directly under title */
-    margin-top: 0.5rem; /* Small space between title and buttons */
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
-.pill-button {
+.nav-button {
     background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
     border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 50px; /* Pill shape */
-    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 
-        inset 0 -2px 4px rgba(0, 0, 0, 0.1),
-        0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
     color: #555;
 }
 
-.pill-button:hover {
+.nav-button:hover {
     background: linear-gradient(180deg, #f0f0f0 0%, #d9d9d9 100%);
-    transform: translateY(-2px);
-    box-shadow: 
-        inset 0 -3px 6px rgba(0, 0, 0, 0.15),
-        0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateX(5px);
 }
 
-.pill-button.active {
+.nav-button.active {
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
     color: white;
     box-shadow: 
@@ -90,9 +78,32 @@ body {
         0 2px 8px rgba(102, 126, 234, 0.4);
 }
 
-/* ===== Main Content Area ===== */
+/* ===== Right Main Content Wrapper ===== */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Prevents content overflow */
+}
+
+/* ===== Header Section with Black Line ===== */
+.header-section {
+    text-align: center;
+    border-bottom: 4px solid #000;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* ===== Main Content Display Area ===== */
 .main-content {
-    padding-top: 1rem;
+    flex-grow: 1;
 }
 
 /* ===== Tab Content ===== */
@@ -116,7 +127,7 @@ body {
     }
 }
 
-/* ===== Content - NO WHITE BOX, sits directly on cream background ===== */
+/* ===== Content Cards ===== */
 .content-card {
     background: transparent; /* Removed white box */
     border-radius: 20px;
@@ -130,6 +141,12 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #444;
 }
 
 .gradient-text {
@@ -295,28 +312,32 @@ h1 {
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    .content-wrapper {
-        max-width: 90vw;
-        padding: 1rem;
+@media (max-width: 900px) {
+    .layout-container {
+        flex-direction: column;
     }
 
-    .header-section {
-        border-bottom-width: 3px;
+    .sidebar {
+        width: 100%;
+        max-height: 300px;
+        border-left: none;
+        border-right: none;
+        border-bottom: 4px solid #000;
+    }
+
+    .section-label {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        max-height: none;
     }
 
     .page-title {
-        font-size: 1.8rem;
-    }
-
-    .navigation-buttons {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .pill-button {
-        width: 100%;
-        text-align: center;
+        font-size: 2rem;
     }
 
     .content-card {

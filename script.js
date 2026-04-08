@@ -1,16 +1,16 @@
-// Tab Navigation Functionality
+// Navigation Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all pill navigation buttons and content sections
-    const pillButtons = document.querySelectorAll('.pill-button');
+    // Get all navigation buttons and content sections
+    const navButtons = document.querySelectorAll('.nav-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
-    // Add click event listeners to each pill button
-    pillButtons.forEach(button => {
+    // Add click event listeners to each nav button
+    navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetTab = this.getAttribute('data-tab');
             
             // Switch active state on buttons
-            pillButtons.forEach(btn => btn.classList.remove('active'));
+            navButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
             // Show the corresponding content section
