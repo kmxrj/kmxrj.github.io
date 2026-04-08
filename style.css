@@ -40,11 +40,10 @@ body {
 }
 
 /* ===== Left Sidebar Navigation - Narrower width ===== */
-/* TODO: EDIT ME - Adjust these values as needed for your layout preferences */
 .sidebar {
-    width: 220px; /* Made narrower from 280px - adjust this number to make it wider or narrower */
-    background-color: transparent; /* No separate background since parent is cream */
-    padding: 2rem 1.25rem; /* Slightly reduced padding for tighter feel */
+    width: 220px;
+    background-color: transparent;
+    padding: 2rem 1.25rem;
     overflow-y: auto;
     flex-shrink: 0;
     
@@ -52,47 +51,72 @@ body {
     border-right: 4px solid #000;
 }
 
+/* TODO: Sidebar avatar placeholder style */
+.sidebar-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* SECTION TITLE "kmxrj" moved to sidebar top */
+.sidebar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 0;
+    border-bottom: none;
+}
+
 /* Section Labels (Me, Current Projects, Past Projects) - TODO: Update section names */
 .section-label {
     font-size: 1rem;
     font-weight: bold;
-    color: #667eea;
+    color: #667eea; /* TODO: Change accent color */
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     padding-left: 0.5rem;
 }
 
-/* Sub Navigation Buttons */
+/* Sub Navigation Buttons - FLAT NAVY BLUE (no gradients) */
 .sub-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem; /* Slightly larger spacing between buttons */
 }
 
 .nav-button {
-    background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
+    background-color: #1e3a8a; /* FLAT NAVY BLUE - no gradient */
     border: none;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    padding: 0.625rem 0.75rem; /* Slightly tighter button */
+    border-radius: 4px; /* Smaller radius for flatter look */
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     text-align: left;
-    color: #555;
+    color: #ffffff; /* White text on navy background */
+    
+    /* Flat button styling - no gradients, no shadows normally */
+    box-shadow: none; 
 }
 
 .nav-button:hover {
-    background: linear-gradient(180deg, #f0f0f0 0%, #d9d9d9 100%);
-    transform: translateX(5px);
+    /* Subtle hover effect with darker shade of navy blue */
+    background-color: #172554;
+    transform: translateX(0);
+    color: #ffffff;
 }
 
+/* Active button - slightly brighter navy but still flat */
 .nav-button.active {
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 
-        inset 0 -3px 6px rgba(0, 0, 0, 0.2),
-        0 2px 8px rgba(102, 126, 234, 0.4);
+    background-color: #2563eb; /* Lighter active state navy blue */
+    box-shadow: none; /* No shadow even when active */
 }
 
 /* ===== Right Main Content Area ===== */
@@ -100,7 +124,7 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0; /* Prevents content overflow */
+    min-width: 0;
     
     /* Vertical black line separator on LEFT side (right edge of sidebar is already handled) */
     border-left: 4px solid #000;
@@ -109,7 +133,7 @@ body {
 /* ===== Header Section - spans entire width (across both sidebar and content) ===== */
 .header-section {
     text-align: center;
-    padding-bottom: 1rem; /* Spacing below header line before content starts */
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
     
     /* This black line runs horizontally across the ENTIRE layout-container width */
@@ -151,7 +175,7 @@ body {
 
 /* ===== Content Cards - no white background, sits directly on cream ===== */
 .content-card {
-    background: transparent; /* TODO: If you want content boxes with backgrounds, change this value */
+    background: transparent;
     border-radius: 20px;
     padding: 3rem 2.5rem;
     box-shadow: none; 
@@ -190,7 +214,7 @@ h2 {
     font-size: 1.5rem;
     margin: 2rem 0 1rem 0;
     padding-left: 1rem;
-    border-left: 4px solid #667eea; /* TODO: Change accent color if needed */
+    border-left: 4px solid #667eea; /* TODO: Change accent color */
 }
 
 /* ===== Profile Section ===== */
@@ -231,7 +255,7 @@ h2 {
 
 .feature-item {
     padding: 0.75rem 1rem;
-    background: rgba(102, 126, 234, 0.05); /* TODO: Adjust accent colors as needed */
+    background: rgba(102, 126, 234, 0.05); /* TODO: Adjust accent colors */
     margin-bottom: 0.5rem;
     border-radius: 10px;
     display: flex;
@@ -304,7 +328,7 @@ h2 {
 }
 
 .cta-button {
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); /* TODO: Change gradient colors */
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); /* TODO: Change to flat navy or different style */
     color: white;
     border: none;
     padding: 1rem 2.5rem;
