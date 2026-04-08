@@ -39,18 +39,17 @@ body {
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 1rem; /* Reduced bottom margin */
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid #000;
+    margin-bottom: 1.5rem; /* Space between title and buttons */
+    padding-top: 2rem; /* Space from top of content wrapper */
+    border-bottom: 3px solid #000; /* Black underline at bottom */
 }
 
-/* ===== Pill Navigation Buttons - NOW ABOVE the black line ===== */
+/* ===== Pill Navigation Buttons - BELOW the black line ===== */
 .navigation-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2.5rem; /* Space between buttons and content starts below */
-    padding-top: 2rem; /* Space from the black border line */
 }
 
 .pill-button {
