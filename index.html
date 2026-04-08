@@ -1,91 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- TODO: Update title tag with your website name -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kmxrj | Portfolio</title>
+    <!-- Link to CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Centered Main Container - 1200px wide with black side borders -->
+    
+    <!-- ======================================================================
+         MAIN CONTAINER - Outer boundary of your layout (1200px wide)
+         This is the largest wrapper, holds everything centered on screen
+         ====================================================================== -->
     <div class="main-container">
         
-        <!-- Internal Layout (Sidebar + Content) -->
+        <!-- ======================================================================
+             LAYOUT CONTAINER - Inner area with cream background
+             Contains sidebar and main content side-by-side
+             Has vertical black line separating them
+             ====================================================================== -->
         <div class="layout-container">
             
-            <!-- Left Sidebar Navigation -->
+            <!-- ======================================================================
+                 SIDEBAR NAVIGATION - Left column with navigation buttons
+                 TODO: Edit section-label text to change category names
+                 TODO: Edit nav-button text inside each button to change button labels
+                 ====================================================================== -->
             <aside class="sidebar">
+                
+                <!-- SECTION 1: Me (TODO: Change this to your preferred name) -->
                 <div class="section-label">Me</div>
                 <nav class="sub-nav">
+                    <!-- TODO: Edit data-tab attribute value to match corresponding section id below -->
+                    <!-- TODO: Edit button text here to change the navigation label -->
                     <button class="nav-button active" data-tab="eam">EAM</button>
-                    <button class="nav-button" data-tab="resume">Resume</button>
+                    
+                    <!-- TODO: Add more buttons as needed, each should have a matching section below -->
+                    <!-- Example format for another button: -->
+                    <!-- <button class="nav-button" data-tab="another-section">Button Name</button> -->
                 </nav>
 
+                <!-- SECTION 2: Current Projects (TODO: Change this to your preferred name) -->
                 <div class="section-label">Current Projects</div>
                 <nav class="sub-nav">
+                    <!-- TODO: Edit button text and data-tab values -->
                     <button class="nav-button" data-tab="psyai">PsyAi</button>
                     <button class="nav-button" data-tab="healthpal">HealthPal</button>
+                    
+                    <!-- Example for adding a new project button: -->
+                    <!-- <button class="nav-button" data-tab="new-project">Project Name</button> -->
                 </nav>
 
+                <!-- SECTION 3: Past Projects (TODO: Change this to your preferred name) -->
                 <div class="section-label">Past Projects</div>
                 <nav class="sub-nav">
+                    <!-- TODO: Edit button text and data-tab values -->
                     <button class="nav-button" data-tab="liora">Liora</button>
                     <button class="nav-button" data-tab="polylink">PolyLink Belts</button>
                     <button class="nav-button" data-tab="dripsitters">DripSitters</button>
                     <button class="nav-button" data-tab="roblox">Roblox Games</button>
+                    
+                    <!-- Example for adding a new past project: -->
+                    <!-- <button class="nav-button" data-tab="another-project">Project Name</button> -->
                 </nav>
+                
             </aside>
-
-            <!-- Main Content Area -->
+            
+            <!-- ======================================================================
+                 MAIN CONTENT AREA - Right column with your actual content
+                 Each tab-section below should have a matching button in the sidebar
+                 ====================================================================== -->
             <main class="content-wrapper">
                 
-                <!-- Header Section -->
+                <!-- ======================================================================
+                     HEADER SECTION - Spans entire width across both sidebar and main area
+                     Black underline runs horizontally across everything
+                     ====================================================================== -->
                 <header class="header-section">
+                    <!-- TODO: Edit this title text if needed -->
                     <h1 class="page-title">kmxrj</h1>
                 </header>
 
-                <!-- Content Display Area -->
+                <!-- Main content display area - starts below the black header line -->
                 <div class="main-content">
                     
-                    <!-- EAM Tab -->
+                    <!-- ===================================================================================
+                         TAB CONTENT SECTIONS - Each should have a matching button in sidebar
+                         Data-tab value MUST match button data-tab attribute exactly
+                         =================================================================================== -->
+                    
+                    <!-- ======================================================================
+                         SECTION: EAM (Me section #1)
+                         TODO: Edit content inside this article to fill with your information
+                         Make sure the tab-button "EAM" in sidebar has matching data-tab="eam"
+                         =================================================================================== -->
                     <section id="eam" class="tab-content active">
                         <article class="content-card">
+                            <!-- TODO: Edit h2 with section title, bio-intro paragraph, and content below -->
                             <h2>EAM</h2>
+                            
+                            <!-- TODO: Add your bio or intro text here -->
                             <p class="bio-intro">Electronic Arts Management - Experience and expertise in managing creative projects within the gaming industry.</p>
                             
+                            <!-- TODO: Add project description or introduction box if needed -->
                             <div class="project-description">
+                                <!-- Edit the h3 title and paragraph text below -->
                                 <h3>About EAM</h3>
                                 <p>Explore my work with Electronic Arts, focusing on project management and creative direction across multiple gaming titles and platforms.</p>
                             </div>
 
+                            <!-- TODO: Add feature boxes or grid items as needed -->
                             <div class="features-grid">
+                                <!-- Example feature box - duplicate this block to add more -->
                                 <div class="feature-box">
+                                    <!-- You can use emojis or add custom icons here -->
                                     <span class="feature-icon">🎮</span>
+                                    <!-- TODO: Edit h3 with feature title and p with description -->
                                     <h3>Game Development</h3>
                                     <p>Oversaw multiple development cycles and coordinated cross-functional teams.</p>
                                 </div>
-                                <div class="feature-box">
-                                    <span class="feature-icon">📊</span>
-                                    <h3>Project Management</h3>
-                                    <p>Led timelines, budgets, and deliverables for successful launches.</p>
-                                </div>
-                                <div class="feature-box">
-                                    <span class="feature-icon">🎨</span>
-                                    <h3>Creative Direction</h3>
-                                    <p>Guided artistic vision and ensured brand consistency across all projects.</p>
-                                </div>
+                                
+                                <!-- Add more feature boxes like this, matching the grid layout -->
                             </div>
 
+                            <!-- TODO: Add CTA button with custom text if needed -->
                             <div class="cta-section">
                                 <button class="cta-button">View Full Details →</button>
                             </div>
                         </article>
                     </section>
 
-                    <!-- Resume Tab -->
+                    <!-- ======================================================================
+                         SECTION: Resume (Me section #2)
+                         TODO: Edit content inside this article
+                         =================================================================================== -->
                     <section id="resume" class="tab-content">
                         <article class="content-card">
                             <h2>Resume</h2>
+                            
+                            <!-- TODO: Add your resume bio/text here -->
                             <p class="bio-intro">Professional experience and career history spanning multiple industries and roles.</p>
                             
                             <div class="project-description">
@@ -93,9 +148,11 @@
                                 <p>A comprehensive overview of my professional journey, skills development, and key achievements throughout my career.</p>
                             </div>
 
+                            <!-- TODO: Edit your experience timeline -->
                             <h2 class="section-title">Experience Timeline</h2>
                             
                             <div class="feature-list" id="resume-items">
+                                <!-- TODO: Add/edit your job entries here, duplicate feature-item blocks as needed -->
                                 <li class="feature-item">
                                     <span class="bullet">●</span>
                                     <span><strong>Senior Creative Director</strong> - Tech Company (2020-2024)</span>
@@ -110,6 +167,7 @@
                                 </li>
                             </div>
 
+                            <!-- TODO: Add skills section if needed -->
                             <h2 class="section-title">Skills</h2>
                             <ul class="feature-list">
                                 <li class="feature-item"><span class="bullet">●</span><span>Project Management & Leadership</span></li>
@@ -117,16 +175,21 @@
                                 <li class="feature-item"><span class="bullet">●</span><span>Team Coordination</span></li>
                             </ul>
 
+                            <!-- TODO: Add CTA button -->
                             <div class="cta-section">
                                 <button class="cta-button">Download PDF →</button>
                             </div>
                         </article>
                     </section>
 
-                    <!-- PsyAi Tab -->
+                    <!-- ======================================================================
+                         SECTION: PsyAi (Current Projects #1)
+                         TODO: Edit this content area for your current project PsyAi
+                         =================================================================================== -->
                     <section id="psyai" class="tab-content">
                         <article class="content-card">
                             <h1>PsyAi</h1>
+                            <!-- TODO: Edit your tagline/slogan here -->
                             <p class="tagline">Where Psychology Meets Artificial Intelligence</p>
                             
                             <div class="project-description">
@@ -134,6 +197,8 @@
                             </div>
 
                             <h2 class="section-title">Key Features</h2>
+                            
+                            <!-- TODO: Add/edit your project features -->
                             <div class="features-grid">
                                 <div class="feature-box">
                                     <span class="feature-icon">🎯</span>
@@ -153,12 +218,15 @@
                             </div>
 
                             <div class="cta-section">
+                                <!-- TODO: Edit CTA button text -->
                                 <button class="cta-button">Learn More →</button>
                             </div>
                         </article>
                     </section>
 
-                    <!-- HealthPal Tab -->
+                    <!-- ======================================================================
+                         SECTION: HealthPal (Current Projects #2)
+                         =================================================================================== -->
                     <section id="healthpal" class="tab-content">
                         <article class="content-card">
                             <h1>HealthPal</h1>
@@ -169,6 +237,7 @@
                             </div>
 
                             <h2 class="section-title">Core Modules</h2>
+                            
                             <div class="features-grid">
                                 <div class="feature-box">
                                     <span class="feature-icon">🏃</span>
@@ -193,10 +262,14 @@
                         </article>
                     </section>
 
-                    <!-- Liora Tab -->
+                    <!-- ======================================================================
+                         SECTION: Liora (Past Projects #1)
+                         TODO: Edit this content for your Liora project
+                         =================================================================================== -->
                     <section id="liora" class="tab-content">
                         <article class="content-card">
                             <h1>Liora</h1>
+                            <!-- TODO: Edit your tagline here -->
                             <p class="tagline">An immersive interactive experience</p>
                             
                             <div class="project-description">
@@ -229,10 +302,13 @@
                         </article>
                     </section>
 
-                    <!-- PolyLink Belts Tab -->
+                    <!-- ======================================================================
+                         SECTION: PolyLink Belts (Past Projects #2)
+                         =================================================================================== -->
                     <section id="polylink" class="tab-content">
                         <article class="content-card">
                             <h1>PolyLink Belts</h1>
+                            <!-- TODO: Edit your tagline here -->
                             <p class="tagline">Connectivity and organization made simple</p>
                             
                             <div class="project-description">
@@ -265,10 +341,13 @@
                         </article>
                     </section>
 
-                    <!-- DripSitters Tab -->
+                    <!-- ======================================================================
+                         SECTION: DripSitters (Past Projects #3)
+                         =================================================================================== -->
                     <section id="dripsitters" class="tab-content">
                         <article class="content-card">
                             <h1>DripSitters</h1>
+                            <!-- TODO: Edit your tagline here -->
                             <p class="tagline">Smart hydration, smarter habits</p>
                             
                             <div class="project-description">
@@ -301,10 +380,13 @@
                         </article>
                     </section>
 
-                    <!-- Roblox Games Tab -->
+                    <!-- ======================================================================
+                         SECTION: Roblox Games (Past Projects #4)
+                         =================================================================================== -->
                     <section id="roblox" class="tab-content">
                         <article class="content-card">
                             <h1>Roblox Games</h1>
+                            <!-- TODO: Edit your tagline here -->
                             <p class="tagline">Creative gameplay experiences built for community</p>
                             
                             <div class="project-description">
@@ -337,11 +419,24 @@
                         </article>
                     </section>
 
+                    <!-- TODO: Add more section elements here following the pattern above -->
+                    <!-- Example format for adding a new section: -->
+                    <!-- 
+                    <section id="new-section-id" class="tab-content">
+                        <article class="content-card">
+                            <h1>New Project Name</h1>
+                            <p class="tagline">Your tagline goes here</p>
+                            <!-- Rest of your content follows the same structure -->
+                        </article>
+                    </section>
+                    -->
+
                 </div>
             </main>
         </div>
     </div>
 
+    <!-- JavaScript file for tab navigation functionality -->
     <script src="script.js"></script>
 </body>
 </html>

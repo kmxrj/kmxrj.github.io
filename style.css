@@ -16,33 +16,43 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Main Centered Container - 1200px wide ===== */
+/* ===== Main Centered Container - 1200px wide with black side borders ===== */
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
     
-    /* Double vertical black border lines on sides of the 1200px section */
+    /* Double vertical black border lines on outer edges of 1200px section */
     border-left: 4px solid #000;
     border-right: 4px solid #000;
 }
 
-/* ===== Internal Layout (Sidebar + Content) ===== */
+/* ===== Internal Layout (Sidebar + Content) - Cream colored ===== */
 .layout-container {
     display: flex;
     min-height: 100vh;
+    
+    /* Full cream background */
+    background-color: #E7DCCD;
+    
+    /* Vertical black line separator between sidebar and content area */
+    border-left: 4px solid #000;
 }
 
-/* ===== Left Sidebar Navigation - WITHIN the centered container ===== */
+/* ===== Left Sidebar Navigation - Narrower width ===== */
+/* TODO: EDIT ME - Adjust these values as needed for your layout preferences */
 .sidebar {
-    width: 280px;
-    background-color: #E7DCCD; /* Same cream color as content */
-    padding: 2rem 1.5rem;
+    width: 220px; /* Made narrower from 280px - adjust this number to make it wider or narrower */
+    background-color: transparent; /* No separate background since parent is cream */
+    padding: 2rem 1.25rem; /* Slightly reduced padding for tighter feel */
     overflow-y: auto;
     flex-shrink: 0;
+    
+    /* Vertical black line separator on RIGHT side only (left edge handled by layout-container) */
+    border-right: 4px solid #000;
 }
 
-/* Section Labels (Me, Current Projects, Past Projects) */
+/* Section Labels (Me, Current Projects, Past Projects) - TODO: Update section names */
 .section-label {
     font-size: 1rem;
     font-weight: bold;
@@ -85,20 +95,25 @@ body {
         0 2px 8px rgba(102, 126, 234, 0.4);
 }
 
-/* ===== Right Main Content Wrapper ===== */
+/* ===== Right Main Content Area ===== */
 .content-wrapper {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     min-width: 0; /* Prevents content overflow */
+    
+    /* Vertical black line separator on LEFT side (right edge of sidebar is already handled) */
+    border-left: 4px solid #000;
 }
 
-/* ===== Header Section with Black Line ===== */
+/* ===== Header Section - spans entire width (across both sidebar and content) ===== */
 .header-section {
     text-align: center;
-    border-bottom: 4px solid #000;
+    padding-bottom: 1rem; /* Spacing below header line before content starts */
     margin-bottom: 2rem;
-    padding-top: 1.5rem;
+    
+    /* This black line runs horizontally across the ENTIRE layout-container width */
+    border-bottom: 4px solid #000;
 }
 
 .page-title {
@@ -134,13 +149,13 @@ body {
     }
 }
 
-/* ===== Content Cards ===== */
+/* ===== Content Cards - no white background, sits directly on cream ===== */
 .content-card {
-    background: transparent; /* Removed white box */
+    background: transparent; /* TODO: If you want content boxes with backgrounds, change this value */
     border-radius: 20px;
     padding: 3rem 2.5rem;
-    box-shadow: none; /* Removed shadow */
-    border: none; /* Removed border */
+    box-shadow: none; 
+    border: none; 
 }
 
 /* ===== Typography ===== */
@@ -175,7 +190,7 @@ h2 {
     font-size: 1.5rem;
     margin: 2rem 0 1rem 0;
     padding-left: 1rem;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #667eea; /* TODO: Change accent color if needed */
 }
 
 /* ===== Profile Section ===== */
@@ -187,7 +202,7 @@ h2 {
 .avatar-placeholder {
     width: 120px;
     height: 120px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* TODO: Change accent colors */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -216,7 +231,7 @@ h2 {
 
 .feature-item {
     padding: 0.75rem 1rem;
-    background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    background: rgba(102, 126, 234, 0.05); /* TODO: Adjust accent colors as needed */
     margin-bottom: 0.5rem;
     border-radius: 10px;
     display: flex;
@@ -226,7 +241,7 @@ h2 {
 
 .feature-item:hover {
     transform: translateX(10px);
-    background: linear-gradient(90deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    background: rgba(102, 126, 234, 0.1);
 }
 
 .bullet {
@@ -244,16 +259,16 @@ h2 {
 }
 
 .feature-box {
-    background: transparent; /* Removed white boxes */
+    background: rgba(102, 126, 234, 0.05); /* TODO: Adjust accent colors */
     padding: 1.5rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: none; /* Removed shadows */
-    border: none; /* Removed borders */
+    box-shadow: none; 
+    border: none; 
 }
 
 .feature-box:hover {
-    background: rgba(102, 126, 234, 0.1); /* Subtle hover effect instead */
+    background: rgba(102, 126, 234, 0.1); /* Subtle hover effect */
 }
 
 .feature-icon {
@@ -275,7 +290,7 @@ h2 {
 
 /* ===== Project Description ===== */
 .project-description {
-    background: rgba(102, 126, 234, 0.05);
+    background: rgba(102, 126, 234, 0.08); /* TODO: Adjust accent colors */
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -289,7 +304,7 @@ h2 {
 }
 
 .cta-button {
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); /* TODO: Change gradient colors */
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -311,7 +326,7 @@ h2 {
 
 /* ===== Contact Info ===== */
 .contact-info {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(102, 126, 234, 0.08); /* TODO: Adjust accent colors */
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
@@ -319,7 +334,7 @@ h2 {
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .layout-container {
         flex-direction: column;
     }
@@ -327,17 +342,19 @@ h2 {
     .sidebar {
         width: 100%;
         max-height: 300px;
+        border-right: none;
+        border-bottom: 4px solid #000;
     }
 
     .section-label {
         margin-top: 1rem;
         margin-bottom: 0.5rem;
     }
-}
 
-@media (max-width: 768px) {
-    .sidebar {
-        max-height: none;
+    /* On mobile, header still spans everything */
+    .header-section {
+        padding-bottom: 1rem;
+        border-bottom: 4px solid #000;
     }
 
     .page-title {
@@ -368,7 +385,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); /* TODO: Adjust accent colors */
     border-radius: 5px;
 }
 
