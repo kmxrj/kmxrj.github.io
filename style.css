@@ -51,10 +51,10 @@ body {
     border-right: 4px solid #000;
 }
 
-/* Sidebar avatar - set to exactly 100px width/height as requested */
+/* Sidebar avatar - set to 75px width/height so kmxrj can be next to it */
 .sidebar-avatar {
-    width: 100px !important;
-    height: 100px !important;
+    width: 75px !important;
+    height: 75px !important;
     border-radius: 50%;
     margin-bottom: 1rem;
     object-fit: cover;
