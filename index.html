@@ -8,7 +8,7 @@
     <!-- Link to CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
     
     <!-- ======================================================================
          MAIN CONTAINER - Outer boundary of your layout (1200px wide)
@@ -25,17 +25,16 @@
             
             <!-- ======================================================================
                  SIDEBAR NAVIGATION - Left column with navigation buttons
-                 kmxrj title and avatar now at the TOP of sidebar
+                 kmxrj title and avatar now at the TOP of sidebar (same line)
                  ====================================================================== -->
             <aside class="sidebar">
                 
-                <!-- NEW: Avatar image next to kmxrj title at top of sidebar -->
-                <!-- TODO: Replace "avatar.png" with your actual filename if different -->
-                <!-- TODO: Adjust width/height in style.css if needed -->
-                <img src="images/avatar.png" alt="kmxrj avatar" class="sidebar-avatar">
-                
-                <!-- kmxrj title moved to sidebar (no longer centered at top of content) -->
-                <h1 class="sidebar-title">kmxrj</h1>
+                <!-- Avatar image next to kmxrj title - SAME LINE -->
+                <!-- Both are in a flex container that puts them side-by-side -->
+                <div class="sidebar-header">
+                    <img src="images/avatar.png" alt="kmxrj avatar" class="sidebar-avatar">
+                    <h1 class="sidebar-title">kmxrj</h1>
+                </div>
                 
                 <!-- SECTION 1: Me - TODO: Edit section-label text and button labels -->
                 <div class="section-label">Me</div>
@@ -55,9 +54,6 @@
                     <button class="nav-button" data-tab="moral-agentic-psychology">Moral Agentic Psychology</button>
                     
                     <button class="nav-button" data-tab="healthpal">HealthPal</button>
-                    
-                    <!-- Example for adding a new project button: -->
-                    <!-- <button class="nav-button" data-tab="new-project">Project Name</button> -->
                 </nav>
 
                 <!-- SECTION 3: Past Projects - TODO: Edit section-label text and button labels -->
@@ -67,22 +63,29 @@
                     <button class="nav-button" data-tab="polylink">PolyLink Belts</button>
                     <button class="nav-button" data-tab="dripsitters">DripSitters</button>
                     <button class="nav-button" data-tab="roblox">Roblox Games</button>
-                    
-                    <!-- Example for adding a new past project: -->
-                    <!-- <button class="nav-button" data-tab="another-project">Project Name</button> -->
                 </nav>
                 
             </aside>
             
             <!-- ======================================================================
                  MAIN CONTENT AREA - Right column with your actual content
-                 Main content header section removed (now only sidebar has kmxrj title)
+                 Main content header section now has quote + moon toggle button
                  ====================================================================== -->
             <main class="content-wrapper">
                 
-                <!-- HEADER SECTION - Now just an empty spacer since header moved to sidebar -->
-                <!-- The black line is now at the top of main-content area -->
-                <header class="header-section"></header>
+                <!-- HEADER SECTION WITH QUOTE AND MOON TOGGLE BUTTON -->
+                <header class="header-section">
+                    <!-- Quote in the main content area, top of content box -->
+                    <div class="header-quote">
+                        <p>"I never quite realized... how beautiful this world is. -A2"</p>
+                    </div>
+                    
+                    <!-- Moon toggle button in right corner -->
+                    <button id="moon-toggle" class="moon-button" aria-label="Toggle dark mode">
+                        <span class="moon-icon-light">🌙</span>
+                        <span class="moon-icon-dark">☀️</span>
+                    </button>
+                </header>
 
                 <!-- Main content display area - starts below the black header line -->
                 <div class="main-content">
@@ -94,7 +97,6 @@
                         <article class="content-card">
                             <h2>EAM</h2>
                             
-                            <!-- TODO: Edit content here -->
                             <p class="bio-intro">Electronic Arts Management - Experience and expertise in managing creative projects within the gaming industry.</p>
                             
                             <div class="project-description">
@@ -178,14 +180,14 @@
                         </article>
                     </section>
 
-                    <!-- SECTION: Moral Agentic Psychology (Current Projects #2) - NEW -->
+                    <!-- SECTION: Moral Agentic Psychology (Current Projects #2) -->
                     <section id="moral-agentic-psychology" class="tab-content">
                         <article class="content-card">
                             <h1>Moral Agentic Psychology</h1>
                             <p class="tagline">Exploring ethics in AI and autonomous systems</p>
                             
                             <div class="project-description">
-                                <p>Moral Agentic Psychology is an emerging field investigating how artificial intelligence and autonomous agents can embody ethical reasoning, moral decision-making, and responsible behavior. This work bridges psychology, ethics, and AI to create more trustworthy human-AI interactions.</p>
+                                <p>Moral Agentic Psychology is an emerging field investigating how artificial intelligence and autonomous agents can embody ethical reasoning, moral decision-making, and responsible behavior.</p>
                             </div>
 
                             <h2 class="section-title">Research Focus</h2>
@@ -349,7 +351,7 @@
         </div>
     </div>
 
-    <!-- JavaScript file for tab navigation functionality -->
+    <!-- JavaScript file for tab navigation functionality and dark mode toggle -->
     <script src="script.js"></script>
 </body>
 </html>

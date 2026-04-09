@@ -1,4 +1,4 @@
-// Navigation Functionality
+// Tab Navigation Functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Get all navigation buttons and content sections
     const navButtons = document.querySelectorAll('.nav-button');
@@ -45,6 +45,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Dark Mode Toggle Functionality - Moon Button
+const moonButton = document.getElementById('moon-toggle');
+const body = document.body;
+
+if (moonButton) {
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme if saved or based on system preference
+    if (savedTheme) {
+        body.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark) {
+        body.setAttribute('data-theme', 'dark');
+    }
+
+    // Add click event listener for moon toggle button
+    moonButton.addEventListener('click', function() {
+        const currentTheme = body.getAttribute('data-theme');
+        
+        // Toggle between light and dark mode
+        if (currentTheme === 'light') {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Also listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Only use system preference if no saved preference exists
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme) {
+            body.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+}
 
 // Add hover effects for extra flair
 function addHoverEffects() {
