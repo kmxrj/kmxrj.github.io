@@ -16,9 +16,9 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Dark Mode Variables ===== */
+/* ===== Dark Mode Background ONLY - No other styling changes ===== */
 body[data-theme="dark"] {
-    --accent-color: #3b82f6; /* Lighter blue for dark mode */
+    background-image: url('images/background_dark.png') !important;
 }
 
 /* Main Centered Container - 1200px wide with black side borders */
@@ -206,9 +206,9 @@ body[data-theme="dark"] {
     transition: opacity 0.3s ease;
 }
 
-/* Dark mode - swap moon icon */
+/* Dark mode - swap moon icon (background changes, other styles stay same) */
 body[data-theme="dark"] .moon-button {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(30, 58, 138, 0.2); /* Slightly more visible in darker bg */
 }
 
 body[data-theme="dark"] .moon-icon-light {
