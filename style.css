@@ -143,6 +143,11 @@ body[data-theme="dark"] {
     border-left: 4px solid #000;
 }
 
+/*adding indentations to the begining of paragraphs */
+.first-line-indented {
+    text-indent: 30px; /* Or any amount of pixels */
+}
+
 /* ===== Header Section - spans entire width (across both sidebar and content) ===== */
 .header-section {
     text-align: left;
